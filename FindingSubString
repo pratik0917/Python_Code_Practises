@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Aug  6 15:57:13 2023
+
+@author: Admin
+"""
+
+def count_substring(string, sub_string):
+    ls = len(string);
+    lss = len(sub_string);
+    print(string[0],sub_string[0])
+    fcount = 0;
+    for i in range(ls):
+        for j in range(lss):
+            if i < (ls-j):
+                if string[i+j] == sub_string[j]:
+                    print("match", string[i+j])
+                    if j == lss - 1:
+                        print("Count is match")
+                        fcount = fcount + 1;
+                else:
+                    break;
+                    
+    return fcount;
+
+if __name__ == '__main__':
+    string = "ABCDCD"
+    sub_string = "CDCD"
+    
+    count = count_substring(string, sub_string)
+    print(count)
