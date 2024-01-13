@@ -1,0 +1,40 @@
+Finding Largest Prefix among string
+
+#Input = ["geeksforgeeks", "geeks", "geek", "geezer"]
+Input = ["aple","ape","appril"]
+cnt=0
+print(len(Input))
+Output =[]
+fOutput= []
+for i in range(len(Input)-1):
+    print(Input[i])
+    cword = Input[i]
+    for j in range(len(Input[i])):
+        for k in range(len(Input)-1):
+            if Input[i+1].startswith(Input[i][j],j) == True:
+                print("#"*50);
+                print(Input)
+                print("print(Value of Input[i+1] :  )" ,Input[i+1])
+                print("Value of Input[i] :  ", Input[i])
+                print("Value of Input[i][j]", Input[i][j])
+                print("position of J : ",j)
+                print("character has appended",Input[i][j])
+                Output.append(Input[i][j])
+                if i+1==2:
+                    cnt = cnt +1;
+
+             
+            break;
+
+print("value of count",cnt)            
+print(Input,Output)                
+for p in range(cnt):
+    print("this is p block",Output[p])
+    if Output.count(Output[p]) >=len(Input) -1:
+        print("Output.count(Output[p])",Output.count(Output[p]),"len(Input)",cnt)
+        fOutput.append(Output[p])
+
+ffOutput = "".join(fOutput)        
+print(Output)
+print(fOutput)
+print(ffOutput)
